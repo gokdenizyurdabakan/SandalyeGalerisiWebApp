@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a id="navbar"class="navbar-brand" href="/">
+    <font face = "helvetica" size="7">
+      SANDALYE GALERİSİ
+    </font>
+          
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <style>
+    .navbar-brand {
+      float: left;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+  }
+  .navbar-brand {float:none;}
+  </style>
+
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+<div>
+  <ul>
+    <li>
+  {% for item in categories %}
+  {% if item.status == "published" %}
+  <a class="dropdown-item" href="{% url 'base' category_slug=item.slug %}">
+    <font face = "helvetica" size="4">
+      {{ item.title }}
+    </font>
+    
+  </a>
+  <style>
+    ul {
+      width: 300px;
+    }
+    li {
+      width: 100%;
+      clear: both;
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+
+  {% else %}
+  <h3>hata</h3>
+  {% endif %}
+  
+{% endfor %}
+</li>
+
+</ul>
+
+</div>
+</nav>

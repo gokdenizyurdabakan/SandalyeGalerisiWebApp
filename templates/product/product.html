@@ -1,0 +1,48 @@
+
+
+<div class="card mt-3 " style="max-width: 300px;">
+
+      {% if item.cover_image %}
+      <img src="{{ item.cover_image.url }}"  alt="Card image" >
+      {% endif %}
+
+
+
+  {% comment %} {% for item in products %}
+    {% if item.status == "published" %}
+    <a  href="{% url 'product_show' product_slug=item.slug %}">
+      {{ item.title }}
+    </a>
+
+    {% else %}
+    <h3>hata</h3>
+    {% endif %}
+    
+{% endfor %} {% endcomment %}
+    <div class="card-body">
+      
+      <p class="card-text" >
+        {% if item.status == "published" %}
+        <div>
+          <a  color="red" href="{% url 'product_show' product_slug=item.slug %}">
+          <font face = "geneva"size="4" color = "black">{{ item.title }}</font> 
+          <br>
+          <a class="sf-icon-telephone e-btn e-link" href="tel:5326938271"><font face = "helvetica"size="4" color = "green">Fiyat Bilgisi İçin Arayınız</font> </a>
+          
+          
+            
+          </a>     
+        </div>
+ 
+        {% endif %}
+
+        
+      </p>
+    </div>
+  </a>
+  
+
+  
+</div>
+
+
