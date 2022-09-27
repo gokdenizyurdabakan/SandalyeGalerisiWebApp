@@ -20,10 +20,10 @@
 
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-<div>
-  <ul>
-    <li>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
   {% for item in categories %}
   {% if item.status == "published" %}
   <a class="dropdown-item" href="{% url 'base' category_slug=item.slug %}">
@@ -32,6 +32,7 @@
     </font>
     
   </a>
+  </li>
   <style>
     ul {
       width: 300px;
@@ -49,7 +50,7 @@
   {% endif %}
   
 {% endfor %}
-</li>
+
 
 </ul>
 
